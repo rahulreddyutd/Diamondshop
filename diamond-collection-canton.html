@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diamond Collection Canton — Eternally Yours</title>
+<meta name="description" content="Custom jewelry, moissanite, lab and natural diamonds, grillz and watches. Belden Village Mall, Canton, Ohio." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0b0d;
+    --bg-2: #131318;
+    --ink: #f4ecd8;
+    --ink-dim: #9a9285;
+    --gold: #c9a86a;
+    --gold-bright: #e8c987;
+    --line: rgba(201, 168, 106, 0.22);
+    --line-soft: rgba(244, 236, 216, 0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  /* Announcement bar */
+  .announce {
+    background: #000;
+    color: var(--gold);
+    text-align: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* Nav */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11, 11, 13, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 1.1rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2rem;
+  }
+  .nav-links {
+    display: flex; gap: 2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .nav-links a { position: relative; padding: 0.4rem 0; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--gold-bright); }
+  .nav-links a::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 100%; height: 1px; background: var(--gold);
+    transform: scaleX(0); transform-origin: right;
+    transition: transform 0.4s ease;
+  }
+  .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+    color: var(--ink);
+  }
+  .logo .small {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    margin-top: 0.1rem;
+  }
+  .nav-right {
+    display: flex; justify-content: flex-end; gap: 1.5rem;
+    font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  .nav-right a:hover { color: var(--gold-bright); }
+  .nav-toggle { display: none; background: none; border: 0; color: var(--ink); cursor: pointer; }
+
+  @media (max-width: 880px) {
+    .nav-inner { grid-template-columns: auto 1fr auto; padding: 1rem 1.2rem; }
+    .nav-links, .nav-right { display: none; }
+    .nav-toggle { display: block; font-size: 1.4rem; }
+    .logo { text-align: left; font-size: 1.25rem; }
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 6rem 1.5rem 4rem;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(201, 168, 106, 0.18), transparent 55%),
+      radial-gradient(ellipse at 80% 70%, rgba(201, 168, 106, 0.12), transparent 60%),
+      linear-gradient(180deg, #0b0b0d 0%, #15110a 50%, #0b0b0d 100%);
+  }
+  .hero-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(232, 201, 135, 0.6) 0, transparent 1.5px),
+      radial-gradient(circle at 70% 80%, rgba(232, 201, 135, 0.4) 0, transparent 1.5px),
+      radial-gradient(circle at 90% 15%, rgba(232, 201, 135, 0.5) 0, transparent 1.5px),
+      radial-gradient(circle at 35% 90%, rgba(232, 201, 135, 0.3) 0, transparent 1.5px),
+      radial-gradient(circle at 55% 45%, rgba(232, 201, 135, 0.4) 0, transparent 1.5px);
+    background-size: 600px 600px;
+    opacity: 0.7;
+    animation: drift 30s linear infinite;
+  }
+  @keyframes drift {
+    from { transform: translate(0, 0); }
+    to { transform: translate(60px, 60px); }
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: 900px; }
+  .hero .eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.8rem;
+    opacity: 0; animation: fadeUp 1s ease forwards;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2.6rem, 7vw, 5.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.6rem;
+    opacity: 0; animation: fadeUp 1.2s ease 0.2s forwards;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-bright);
+    font-weight: 400;
+  }
+  .hero p {
+    font-size: 1.05rem;
+    color: var(--ink-dim);
+    max-width: 540px;
+    margin: 0 auto 2.5rem;
+    letter-spacing: 0.02em;
+    opacity: 0; animation: fadeUp 1.2s ease 0.4s forwards;
+  }
+  .hero-ctas {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 1.2s ease 0.6s forwards;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold-bright);
+  }
+  .btn:hover { background: var(--gold); color: #0b0b0d; }
+  .btn.solid { background: var(--gold); color: #0b0b0d; }
+  .btn.solid:hover { background: var(--gold-bright); border-color: var(--gold-bright); }
+
+  /* Section base */
+  section { padding: 7rem 1.5rem; position: relative; }
+  .container { max-width: 1280px; margin: 0 auto; }
+  .section-head { text-align: center; margin-bottom: 4rem; }
+  .section-head .eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.5em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.2rem;
+  }
+  .section-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .section-head h2 em { font-style: italic; color: var(--gold-bright); }
+  .section-head p { color: var(--ink-dim); max-width: 600px; margin: 0 auto; }
+
+  /* Divider ornament */
+  .ornament {
+    display: flex; align-items: center; justify-content: center;
+    gap: 1rem; margin: 1rem 0;
+  }
+  .ornament .line { width: 60px; height: 1px; background: var(--gold); opacity: 0.5; }
+  .ornament .diamond {
+    width: 10px; height: 10px; background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  /* Categories grid */
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  @media (max-width: 980px) { .categories { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .categories { grid-template-columns: 1fr; } }
+  .cat-card {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: var(--bg-2);
+    border: 1px solid var(--line-soft);
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.4s ease;
+  }
+  .cat-card:hover { border-color: var(--gold); }
+  .cat-visual {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.8s ease;
+  }
+  .cat-card:hover .cat-visual { transform: scale(1.08); }
+  .cat-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%);
+    z-index: 1;
+  }
+  .cat-info {
+    position: absolute; bottom: 1.8rem; left: 1.6rem; right: 1.6rem;
+    z-index: 2;
+  }
+  .cat-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+    color: var(--ink);
+  }
+  .cat-info .cat-link {
+    font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold-bright);
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .cat-link::after {
+    content: '→'; transition: transform 0.3s ease;
+  }
+  .cat-card:hover .cat-link::after { transform: translateX(6px); }
+
+  /* SVG visuals for cards */
+  .gem-svg { width: 60%; height: 60%; opacity: 0.85; }
+
+  /* Story / featured collection */
+  .story {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  @media (max-width: 880px) {
+    .story { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  .story-visual {
+    aspect-ratio: 4 / 5;
+    background:
+      radial-gradient(ellipse at center, rgba(201, 168, 106, 0.25), transparent 65%),
+      linear-gradient(135deg, #1a1612 0%, #0b0b0d 100%);
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .story-visual::before {
+    content: ''; position: absolute; inset: 1rem;
+    border: 1px solid var(--line-soft);
+    pointer-events: none;
+  }
+  .story h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  .story h2 em { font-style: italic; color: var(--gold-bright); }
+  .story .eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.5em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.2rem;
+  }
+  .story p {
+    color: var(--ink-dim); margin-bottom: 1.2rem; font-size: 1.02rem;
+  }
+  .story .btn { margin-top: 1.5rem; }
+
+  /* Instagram / Shop section */
+  .shop-section {
+    background: linear-gradient(180deg, var(--bg) 0%, #100d09 50%, var(--bg) 100%);
+    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .ig-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+  @media (max-width: 980px) { .ig-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .ig-grid { grid-template-columns: 1fr; } }
+  .ig-card {
+    position: relative;
+    aspect-ratio: 1 / 1.15;
+    background: var(--bg-2);
+    border: 1px solid var(--line-soft);
+    overflow: hidden;
+    transition: transform 0.5s ease, border-color 0.4s ease;
+    display: flex; flex-direction: column;
+  }
+  .ig-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+  .ig-visual {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(135deg, #1a1612 0%, #0b0b0d 100%);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .ig-visual::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201, 168, 106, 0.18), transparent 65%);
+  }
+  .ig-meta {
+    padding: 1rem 1.1rem 1.2rem;
+    border-top: 1px solid var(--line-soft);
+    background: rgba(0,0,0,0.4);
+  }
+  .ig-meta .caption {
+    font-size: 0.82rem;
+    color: var(--ink);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0.6rem;
+  }
+  .ig-meta .stats {
+    display: flex; gap: 1rem;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .ig-meta .stats span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .ig-badge {
+    position: absolute; top: 0.8rem; right: 0.8rem; z-index: 3;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    color: var(--gold-bright);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid var(--line);
+  }
+  .ig-hashtags {
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    color: var(--ink-dim);
+    letter-spacing: 0.02em;
+  }
+  .ig-follow {
+    text-align: center; margin-top: 3rem;
+  }
+  .ig-handle {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-size: 0.95rem;
+    color: var(--gold-bright);
+    letter-spacing: 0.1em;
+  }
+
+  /* Services */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  @media (max-width: 880px) { .services { grid-template-columns: 1fr; } }
+  .service {
+    padding: 3.5rem 2.5rem;
+    text-align: center;
+    border-right: 1px solid var(--line-soft);
+    transition: background 0.4s ease;
+  }
+  .service:last-child { border-right: none; }
+  @media (max-width: 880px) {
+    .service { border-right: none; border-bottom: 1px solid var(--line-soft); }
+    .service:last-child { border-bottom: none; }
+  }
+  .service:hover { background: rgba(201, 168, 106, 0.04); }
+  .service svg { margin: 0 auto 1.5rem; color: var(--gold); }
+  .service h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  .service p { color: var(--ink-dim); font-size: 0.95rem; }
+
+  /* Visit / location */
+  .visit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  @media (max-width: 880px) { .visit { grid-template-columns: 1fr; gap: 3rem; } }
+  .visit-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    margin-bottom: 1.5rem;
+  }
+  .visit-info h2 em { font-style: italic; color: var(--gold-bright); }
+  .visit-info .address {
+    font-size: 1.1rem;
+    margin: 1.8rem 0;
+    line-height: 1.8;
+  }
+  .visit-info .address strong {
+    font-weight: 500;
+    color: var(--gold-bright);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .hours {
+    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+    padding: 1.5rem 0;
+    margin: 2rem 0;
+  }
+  .hours-row {
+    display: flex; justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+  .hours-row .day {
+    letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.78rem;
+    color: var(--ink-dim);
+  }
+  .visit-map {
+    aspect-ratio: 1 / 1;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(201, 168, 106, 0.15), transparent 70%),
+      linear-gradient(135deg, #1a1612 0%, #0b0b0d 100%);
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .visit-map .pin {
+    position: relative;
+    z-index: 2;
+  }
+  .visit-map::before {
+    content: ''; position: absolute; inset: 1rem;
+    border: 1px solid var(--line-soft);
+  }
+  .visit-map .ripple {
+    position: absolute; top: 50%; left: 50%;
+    width: 100px; height: 100px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple 3s ease-out infinite;
+    opacity: 0;
+  }
+  .visit-map .ripple.r2 { animation-delay: 1s; }
+  .visit-map .ripple.r3 { animation-delay: 2s; }
+  @keyframes ripple {
+    0% { width: 20px; height: 20px; opacity: 0.8; }
+    100% { width: 320px; height: 320px; opacity: 0; }
+  }
+
+  /* Newsletter */
+  .newsletter {
+    background:
+      radial-gradient(ellipse at center, rgba(201, 168, 106, 0.1), transparent 60%),
+      #0a0907;
+    text-align: center;
+    border-top: 1px solid var(--line-soft);
+  }
+  .newsletter h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 1rem;
+  }
+  .newsletter h2 em { font-style: italic; color: var(--gold-bright); }
+  .newsletter p { color: var(--ink-dim); max-width: 480px; margin: 0 auto 2.5rem; }
+  .newsletter-form {
+    display: flex; gap: 0;
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px solid var(--line);
+    background: rgba(0,0,0,0.4);
+  }
+  .newsletter-form input {
+    flex: 1;
+    background: transparent;
+    border: 0;
+    color: var(--ink);
+    padding: 1rem 1.3rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    outline: none;
+  }
+  .newsletter-form input::placeholder { color: var(--ink-dim); }
+  .newsletter-form button {
+    background: var(--gold);
+    color: #0b0b0d;
+    border: 0;
+    padding: 0 2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: 'Outfit', sans-serif;
+  }
+  .newsletter-form button:hover { background: var(--gold-bright); }
+
+  /* Footer */
+  footer {
+    background: #060607;
+    padding: 5rem 1.5rem 2rem;
+    border-top: 1px solid var(--line-soft);
+  }
+  .foot-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+  @media (max-width: 880px) { .foot-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; } }
+  @media (max-width: 520px) { .foot-grid { grid-template-columns: 1fr; } }
+  .foot-brand .logo { text-align: left; margin-bottom: 1rem; }
+  .foot-brand p { color: var(--ink-dim); font-size: 0.9rem; max-width: 320px; }
+  .foot-col h4 {
+    font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.2rem; font-weight: 500;
+  }
+  .foot-col a {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--ink-dim);
+    padding: 0.35rem 0;
+    transition: color 0.3s;
+  }
+  .foot-col a:hover { color: var(--gold-bright); }
+  .foot-bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line-soft);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--ink-dim);
+    letter-spacing: 0.05em;
+  }
+  .socials { display: flex; gap: 1.2rem; }
+  .socials a {
+    width: 36px; height: 36px;
+    border: 1px solid var(--line);
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: all 0.3s;
+    color: var(--gold);
+  }
+  .socials a:hover { background: var(--gold); color: #0b0b0d; }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s ease, transform 0.9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="announce">Complimentary Consultation · Custom Designs Crafted In-Studio · Belden Village Mall</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <nav class="nav-links">
+      <a href="#categories">Collections</a>
+      <a href="#story">Custom Design</a>
+      <a href="#shop">From The Shop</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a href="#" class="logo">
+      Diamond Collection
+      <span class="small">— Canton —</span>
+    </a>
+    <div class="nav-right">
+      <a href="#visit">Book A Visit</a>
+      <a href="https://www.instagram.com/diamondcollection_belden" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">Eternally Yours</div>
+    <h1>Where luxury meets <em>craftsmanship.</em></h1>
+    <p>Custom pieces, grillz, moissanite, lab and natural diamonds. Each one designed with you, made to outlast everything else you own.</p>
+    <div class="hero-ctas">
+      <a href="#categories" class="btn solid">Explore Collections</a>
+      <a href="#story" class="btn">Design Custom</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">The Collection</div>
+      <h2>Pieces with a <em>signature.</em></h2>
+      <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+      <p>From the everyday pendant to the once-in-a-lifetime ring, we work across every category so the whole jewelry box can come from one shop.</p>
+    </div>
+
+    <div class="categories">
+      <a href="#" class="cat-card reveal">
+        <div class="cat-visual">
+          <svg class="gem-svg" viewBox="0 0 200 200" fill="none">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#e8c987"/>
+                <stop offset="1" stop-color="#8b6f3f"/>
+              </linearGradient>
+            </defs>
+            <circle cx="100" cy="105" r="55" stroke="url(#g1)" stroke-width="2" fill="none"/>
+            <path d="M100 65 L130 95 L100 145 L70 95 Z" fill="url(#g1)" opacity="0.85"/>
+            <path d="M100 65 L130 95 L100 105 Z" fill="#e8c987" opacity="0.9"/>
+            <path d="M100 65 L70 95 L100 105 Z" fill="#c9a86a"/>
+            <line x1="100" y1="65" x2="100" y2="40" stroke="url(#g1)" stroke-width="1.5"/>
+            <circle cx="100" cy="35" r="3" fill="#e8c987"/>
+          </svg>
+        </div>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>Engagement Rings</h3>
+          <span class="cat-link">Discover</span>
+        </div>
+      </a>
+
+      <a href="#" class="cat-card reveal">
+        <div class="cat-visual">
+          <svg class="gem-svg" viewBox="0 0 200 200" fill="none">
+            <defs>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f4ecd8"/>
+                <stop offset="1" stop-color="#c9a86a"/>
+              </linearGradient>
+            </defs>
+            <circle cx="100" cy="100" r="42" stroke="url(#g2)" stroke-width="2" fill="none"/>
+            <circle cx="100" cy="100" r="32" stroke="url(#g2)" stroke-width="1" fill="none" opacity="0.5"/>
+            <g fill="url(#g2)">
+              <circle cx="100" cy="58" r="4"/>
+              <circle cx="142" cy="100" r="4"/>
+              <circle cx="100" cy="142" r="4"/>
+              <circle cx="58" cy="100" r="4"/>
+              <circle cx="130" cy="70" r="3"/>
+              <circle cx="130" cy="130" r="3"/>
+              <circle cx="70" cy="130" r="3"/>
+              <circle cx="70" cy="70" r="3"/>
+            </g>
+          </svg>
+        </div>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>Wedding Bands</h3>
+          <span class="cat-link">Discover</span>
+        </div>
+      </a>
+
+      <a href="#" class="cat-card reveal">
+        <div class="cat-visual">
+          <svg class="gem-svg" viewBox="0 0 200 200" fill="none">
+            <defs>
+              <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e8c987"/>
+                <stop offset="1" stop-color="#8b6f3f"/>
+              </linearGradient>
+            </defs>
+            <path d="M70 50 L130 50 L150 90 L100 165 L50 90 Z"
+                  fill="url(#g3)" stroke="#e8c987" stroke-width="1.5"/>
+            <path d="M70 50 L100 90 L130 50" fill="none" stroke="#0b0b0d" stroke-width="1.5"/>
+            <path d="M50 90 L100 90 L150 90" fill="none" stroke="#0b0b0d" stroke-width="1.5"/>
+            <path d="M100 90 L100 165" stroke="#0b0b0d" stroke-width="1" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>Pendants</h3>
+          <span class="cat-link">Discover</span>
+        </div>
+      </a>
+
+      <a href="#" class="cat-card reveal">
+        <div class="cat-visual">
+          <svg class="gem-svg" viewBox="0 0 200 200" fill="none">
+            <defs>
+              <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#e8c987"/>
+                <stop offset="1" stop-color="#a07f4a"/>
+              </linearGradient>
+            </defs>
+            <rect x="60" y="80" width="80" height="55" rx="6" fill="url(#g4)" opacity="0.9"/>
+            <g stroke="#0b0b0d" stroke-width="1">
+              <line x1="70" y1="80" x2="70" y2="135"/>
+              <line x1="84" y1="80" x2="84" y2="135"/>
+              <line x1="100" y1="80" x2="100" y2="135"/>
+              <line x1="116" y1="80" x2="116" y2="135"/>
+              <line x1="130" y1="80" x2="130" y2="135"/>
+            </g>
+            <g fill="#fff" opacity="0.8">
+              <circle cx="77" cy="100" r="1.5"/>
+              <circle cx="92" cy="105" r="1.5"/>
+              <circle cx="108" cy="100" r="1.5"/>
+              <circle cx="123" cy="105" r="1.5"/>
+            </g>
+          </svg>
+        </div>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>Custom Grillz</h3>
+          <span class="cat-link">Discover</span>
+        </div>
+      </a>
+
+      <a href="#" class="cat-card reveal">
+        <div class="cat-visual">
+          <svg class="gem-svg" viewBox="0 0 200 200" fill="none">
+            <defs>
+              <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#e8c987"/>
+                <stop offset="1" stop-color="#8b6f3f"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="65" cy="100" rx="10" ry="14" fill="url(#g5)"/>
+            <ellipse cx="135" cy="100" rx="10" ry="14" fill="url(#g5)"/>
+            <circle cx="65" cy="100" r="3" fill="#fff" opacity="0.7"/>
+            <circle cx="135" cy="100" r="3" fill="#fff" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>Earrings</h3>
+          <span class="cat-link">Discover</span>
+        </div>
+      </a>
+
+      <a href="#" class="cat-card reveal">
+        <div class="cat-visual">
+          <svg class="gem-svg" viewBox="0 0 200 200" fill="none">
+            <defs>
+              <linearGradient id="g6" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e8c987"/>
+                <stop offset="1" stop-color="#8b6f3f"/>
+              </linearGradient>
+            </defs>
+            <path d="M55 100 Q100 60 145 100 Q100 140 55 100 Z"
+                  fill="none" stroke="url(#g6)" stroke-width="2.5"/>
+            <circle cx="78" cy="100" r="4" fill="#e8c987"/>
+            <circle cx="100" cy="100" r="5" fill="#e8c987"/>
+            <circle cx="122" cy="100" r="4" fill="#e8c987"/>
+          </svg>
+        </div>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>Necklaces</h3>
+          <span class="cat-link">Discover</span>
+        </div>
+      </a>
+
+      <a href="#" class="cat-card reveal">
+        <div class="cat-visual">
+          <svg class="gem-svg" viewBox="0 0 200 200" fill="none">
+            <defs>
+              <linearGradient id="g7" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f4ecd8"/>
+                <stop offset="1" stop-color="#c9a86a"/>
+              </linearGradient>
+            </defs>
+            <circle cx="100" cy="100" r="42" fill="none" stroke="url(#g7)" stroke-width="3"/>
+            <circle cx="100" cy="100" r="32" fill="#0b0b0d" stroke="url(#g7)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="100" y2="78" stroke="#e8c987" stroke-width="2"/>
+            <line x1="100" y1="100" x2="115" y2="100" stroke="#e8c987" stroke-width="2"/>
+            <circle cx="100" cy="100" r="2" fill="#e8c987"/>
+            <rect x="95" y="50" width="10" height="8" fill="url(#g7)"/>
+          </svg>
+        </div>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>Watches</h3>
+          <span class="cat-link">Discover</span>
+        </div>
+      </a>
+
+      <a href="#" class="cat-card reveal">
+        <div class="cat-visual">
+          <svg class="gem-svg" viewBox="0 0 200 200" fill="none">
+            <defs>
+              <linearGradient id="g8" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#e8c987"/>
+                <stop offset="1" stop-color="#8b6f3f"/>
+              </linearGradient>
+            </defs>
+            <path d="M50 90 L100 50 L150 90 L130 150 L70 150 Z"
+                  fill="url(#g8)" stroke="#e8c987" stroke-width="1.5"/>
+            <path d="M50 90 L150 90" stroke="#0b0b0d" stroke-width="1.5"/>
+            <path d="M100 50 L100 90" stroke="#0b0b0d" stroke-width="1"/>
+            <path d="M70 90 L100 150 L130 90" stroke="#0b0b0d" stroke-width="1"/>
+            <circle cx="100" cy="70" r="3" fill="#fff" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>Moissanite</h3>
+          <span class="cat-link">Discover</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STORY / Custom -->
+<section id="story" style="background: linear-gradient(180deg, var(--bg) 0%, #100d09 100%);">
+  <div class="container">
+    <div class="story">
+      <div class="story-visual reveal">
+        <svg viewBox="0 0 400 500" fill="none" style="width: 75%; height: 75%;">
+          <defs>
+            <linearGradient id="big-gem" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f4ecd8"/>
+              <stop offset="0.5" stop-color="#e8c987"/>
+              <stop offset="1" stop-color="#8b6f3f"/>
+            </linearGradient>
+            <radialGradient id="sparkle" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#fff" stop-opacity="0.9"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <!-- Large diamond -->
+          <g transform="translate(200, 250)">
+            <path d="M-90 -60 L90 -60 L120 0 L0 140 L-120 0 Z"
+                  fill="url(#big-gem)" stroke="#e8c987" stroke-width="1.5"/>
+            <path d="M-90 -60 L0 0 L90 -60" fill="none" stroke="rgba(0,0,0,0.4)" stroke-width="1"/>
+            <path d="M-120 0 L0 0 L120 0" fill="none" stroke="rgba(0,0,0,0.4)" stroke-width="1"/>
+            <path d="M-60 -60 L-30 0 L0 140" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.8"/>
+            <path d="M60 -60 L30 0 L0 140" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.8"/>
+            <path d="M-90 -60 L-30 0" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.8"/>
+            <path d="M90 -60 L30 0" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.8"/>
+            <!-- top facet highlight -->
+            <path d="M-90 -60 L90 -60 L0 -30 Z" fill="#fff" opacity="0.3"/>
+            <path d="M-30 0 L30 0 L0 -30 Z" fill="#fff" opacity="0.25"/>
+          </g>
+          <!-- sparkles -->
+          <circle cx="80" cy="100" r="20" fill="url(#sparkle)"/>
+          <circle cx="320" cy="180" r="15" fill="url(#sparkle)"/>
+          <circle cx="100" cy="400" r="12" fill="url(#sparkle)"/>
+          <circle cx="310" cy="430" r="18" fill="url(#sparkle)"/>
+        </svg>
+      </div>
+      <div class="story-text reveal">
+        <div class="eyebrow">Bespoke Design</div>
+        <h2>Your desire, our <em>craftsmanship.</em></h2>
+        <p>Bring a photo, a memory, a half-formed idea. We sit down together, sketch it out, walk through stones and metals, and build the piece exactly how you want it.</p>
+        <p>From the first conversation to the final polish, every step happens with you in the room. Nothing leaves the studio until it feels right.</p>
+        <a href="#visit" class="btn">Book A Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM / FROM THE SHOP -->
+<section id="shop" class="shop-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">From The Shop</div>
+      <h2>Fresh off the <em>showcase.</em></h2>
+      <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+      <p>Recent pieces, custom orders, and behind-the-counter moments straight from our Instagram.</p>
+    </div>
+
+    <div class="ig-grid">
+
+      <a href="https://www.instagram.com/p/DPR9BIDiahu/" target="_blank" rel="noopener" class="ig-card reveal">
+        <span class="ig-badge">Reel</span>
+        <div class="ig-visual">
+          <svg viewBox="0 0 200 200" style="width: 60%; height: 60%;">
+            <defs>
+              <linearGradient id="igg1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f4ecd8"/>
+                <stop offset="1" stop-color="#c9a86a"/>
+              </linearGradient>
+            </defs>
+            <path d="M65 60 L135 60 L155 90 L100 165 L45 90 Z"
+                  fill="url(#igg1)" stroke="#e8c987" stroke-width="1.5"/>
+            <path d="M45 90 L155 90" stroke="rgba(0,0,0,0.4)" stroke-width="1"/>
+            <path d="M65 60 L100 90 L135 60" stroke="rgba(0,0,0,0.4)" stroke-width="1" fill="none"/>
+            <path d="M85 90 L100 165 L115 90" stroke="rgba(0,0,0,0.3)" stroke-width="0.8" fill="none"/>
+            <line x1="100" y1="60" x2="100" y2="30" stroke="#e8c987" stroke-width="1.5"/>
+            <circle cx="100" cy="25" r="3" fill="#e8c987"/>
+          </svg>
+        </div>
+        <div class="ig-meta">
+          <div class="caption">Unmatched sparkle and clarity. This iconic pendant features brilliant VVS Moissanite with incredible fire on a 925 sterling silver design.</div>
+          <div class="ig-hashtags">#moissanite #customjewelry</div>
+          <div class="stats">
+            <span>♡ 9</span>
+            <span>▶ 135</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/p/DR29S3GDVm4/" target="_blank" rel="noopener" class="ig-card reveal">
+        <span class="ig-badge">Reel</span>
+        <div class="ig-visual">
+          <svg viewBox="0 0 200 200" style="width: 60%; height: 60%;">
+            <defs>
+              <linearGradient id="igg2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#e8c987"/>
+                <stop offset="1" stop-color="#8b6f3f"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="100" cy="115" rx="48" ry="20"
+                     fill="none" stroke="url(#igg2)" stroke-width="3"/>
+            <ellipse cx="100" cy="115" rx="48" ry="20"
+                     fill="none" stroke="url(#igg2)" stroke-width="1" opacity="0.4"
+                     transform="translate(0, -3)"/>
+            <path d="M85 85 L100 60 L115 85 L107 95 L93 95 Z"
+                  fill="url(#igg2)" stroke="#e8c987" stroke-width="1"/>
+            <path d="M85 85 L115 85" stroke="rgba(0,0,0,0.4)"/>
+          </svg>
+        </div>
+        <div class="ig-meta">
+          <div class="caption">Your desire, our craftsmanship. Together, pure perfection.</div>
+          <div class="ig-hashtags">#customjewelry #diamondjewelry #cantonohio</div>
+          <div class="stats">
+            <span>♡ 3</span>
+            <span>▶ 214</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/p/DOT11ELiQwK/" target="_blank" rel="noopener" class="ig-card reveal">
+        <span class="ig-badge">Post</span>
+        <div class="ig-visual">
+          <svg viewBox="0 0 200 200" style="width: 65%; height: 65%;">
+            <defs>
+              <linearGradient id="igg3" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f4ecd8"/>
+                <stop offset="1" stop-color="#c9a86a"/>
+              </linearGradient>
+            </defs>
+            <!-- showcase / display -->
+            <rect x="40" y="60" width="120" height="80" rx="3"
+                  fill="none" stroke="url(#igg3)" stroke-width="1.5"/>
+            <rect x="40" y="60" width="120" height="80" rx="3"
+                  fill="url(#igg3)" opacity="0.08"/>
+            <!-- ring 1 -->
+            <circle cx="75" cy="105" r="14" fill="none" stroke="url(#igg3)" stroke-width="2"/>
+            <path d="M70 95 L75 88 L80 95" fill="url(#igg3)"/>
+            <!-- ring 2 -->
+            <circle cx="125" cy="105" r="14" fill="none" stroke="url(#igg3)" stroke-width="2"/>
+            <path d="M120 95 L125 88 L130 95" fill="url(#igg3)"/>
+            <!-- sparkles -->
+            <g fill="#e8c987">
+              <circle cx="55" cy="75" r="1.5"/>
+              <circle cx="145" cy="80" r="1.5"/>
+              <circle cx="100" cy="130" r="1.5"/>
+            </g>
+          </svg>
+        </div>
+        <div class="ig-meta">
+          <div class="caption">The moment you enter, it's more than just jewelry, it's an experience. Custom designs, diamonds, and moissanite that tell a story.</div>
+          <div class="ig-hashtags">#DiamondJewelry #CustomJewelry #LabDiamonds</div>
+          <div class="stats">
+            <span>♡ 2</span>
+            <span>Sep 7</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/p/DOTzhxLjRTh/" target="_blank" rel="noopener" class="ig-card reveal">
+        <span class="ig-badge">Post</span>
+        <div class="ig-visual">
+          <svg viewBox="0 0 200 200" style="width: 70%; height: 70%;">
+            <defs>
+              <linearGradient id="igg4" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#e8c987"/>
+                <stop offset="1" stop-color="#a07f4a"/>
+              </linearGradient>
+            </defs>
+            <text x="100" y="95" text-anchor="middle"
+                  font-family="Cormorant Garamond, serif"
+                  font-size="36" font-style="italic"
+                  fill="url(#igg4)">Eternally</text>
+            <text x="100" y="130" text-anchor="middle"
+                  font-family="Cormorant Garamond, serif"
+                  font-size="36" font-style="italic"
+                  fill="url(#igg4)">Yours</text>
+            <line x1="60" y1="145" x2="140" y2="145" stroke="url(#igg4)" stroke-width="1"/>
+            <circle cx="100" cy="145" r="3" fill="#e8c987" transform="rotate(45 100 145)"/>
+          </svg>
+        </div>
+        <div class="ig-meta">
+          <div class="caption">Welcome to Diamond Collection. Where luxury meets craftsmanship. From custom pieces and grillz to moissanite, lab and natural diamonds.</div>
+          <div class="ig-hashtags">Eternally Yours</div>
+          <div class="stats">
+            <span>♡ 2</span>
+            <span>Sep 7</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="ig-follow reveal">
+      <a href="https://www.instagram.com/diamondcollection_belden" target="_blank" rel="noopener" class="ig-handle">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+        </svg>
+        <span>@diamondcollection_belden</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section style="padding: 0;">
+  <div class="services">
+    <div class="service">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M12 2 L20 8 L16 22 L8 22 L4 8 Z"/>
+        <path d="M4 8 L20 8"/>
+        <path d="M9 8 L12 22 L15 8"/>
+        <path d="M12 2 L9 8 M12 2 L15 8"/>
+      </svg>
+      <h3>Custom Design</h3>
+      <p>Sketched, sourced, set, and polished in-house. Your idea, made real.</p>
+    </div>
+    <div class="service">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 7 L12 12 L15 14"/>
+      </svg>
+      <h3>Repairs & Resizing</h3>
+      <p>Bring it in, even if you didn't buy it from us. We'll bring it back to life.</p>
+    </div>
+    <div class="service">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M4 12 L9 17 L20 6"/>
+      </svg>
+      <h3>Appraisals</h3>
+      <p>Honest, certified appraisals for insurance, estate, or peace of mind.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit">
+  <div class="container">
+    <div class="visit">
+      <div class="visit-info reveal">
+        <div class="eyebrow" style="font-size: 0.7rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem;">Find Us</div>
+        <h2>Stop by the <em>showroom.</em></h2>
+        <p style="color: var(--ink-dim);">We're inside Belden Village Mall in Canton, Ohio. Walk in to browse, or book a private consultation for custom work.</p>
+        <div class="address">
+          <strong>Diamond Collection</strong>
+          Belden Village Mall<br>
+          4230 Belden Village St NW<br>
+          Canton, OH 44718
+        </div>
+        <div class="hours">
+          <div class="hours-row"><span class="day">Mon — Sat</span><span>11:00 AM — 8:00 PM</span></div>
+          <div class="hours-row"><span class="day">Sunday</span><span>12:00 PM — 6:00 PM</span></div>
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="https://maps.google.com/?q=Belden+Village+Mall+Canton+OH" target="_blank" rel="noopener" class="btn solid">Get Directions</a>
+          <a href="#" class="btn">Book A Visit</a>
+        </div>
+      </div>
+      <div class="visit-map reveal">
+        <span class="ripple"></span>
+        <span class="ripple r2"></span>
+        <span class="ripple r3"></span>
+        <svg class="pin" width="60" height="80" viewBox="0 0 60 80" fill="none">
+          <path d="M30 5 C15 5 5 15 5 30 C5 50 30 75 30 75 C30 75 55 50 55 30 C55 15 45 5 30 5 Z"
+                fill="#c9a86a" stroke="#e8c987" stroke-width="2"/>
+          <circle cx="30" cy="28" r="8" fill="#0b0b0d"/>
+          <path d="M30 22 L34 28 L30 36 L26 28 Z" fill="#e8c987"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="container">
+    <div class="reveal">
+      <h2>Quiet drops. <em>Worth opening.</em></h2>
+      <p>New pieces, custom showcases, and the occasional invitation to a private viewing. No spam, ever.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your email address" aria-label="Email address">
+        <button onclick="this.previousElementSibling.value=''; this.textContent='Joined ✓'; setTimeout(()=>{this.textContent='Join';}, 2500);">Join</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="logo">
+        Diamond Collection
+        <span class="small">— Canton —</span>
+      </div>
+      <p>Custom jewelry, moissanite, lab and natural diamonds, grillz, and luxury watches. Belden Village Mall, Canton, Ohio.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Shop</h4>
+      <a href="#">Engagement Rings</a>
+      <a href="#">Wedding Bands</a>
+      <a href="#">Pendants & Necklaces</a>
+      <a href="#">Earrings</a>
+      <a href="#">Watches</a>
+      <a href="#">Custom Grillz</a>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <a href="#">Custom Design</a>
+      <a href="#">Repairs</a>
+      <a href="#">Appraisals</a>
+      <a href="#">Resizing</a>
+      <a href="#">Cleaning</a>
+    </div>
+    <div class="foot-col">
+      <h4>Visit</h4>
+      <a href="#">Belden Village Mall</a>
+      <a href="#">Canton, OH 44718</a>
+      <a href="#">Book a Consultation</a>
+      <a href="mailto:hello@example.com">Contact</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 Diamond Collection Canton. All rights reserved.</div>
+    <div class="socials">
+      <a href="https://www.instagram.com/diamondcollection_belden" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="TikTok">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
